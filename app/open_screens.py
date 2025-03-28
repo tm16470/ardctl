@@ -39,16 +39,15 @@ def main():
     connected = connected.split('\n')
 
     # change multiple consecutive spaces or tab to one space
-    connected = [re.sub('[\s]+', ' ', i)  for i in connected]
+    connected = [re.sub(r'[\s]+', ' ', i)  for i in connected]
 
     # remove empty elments
-    connected = [i for i in connected if not re.match('^\s*$', i)]
+    connected = [i for i in connected if not re.match(r'^\s*$', i)]
 
     # change connected to a list of lists
     connected = [i.split(' ') for i in connected]
 
     connected = [i for i in connected if i[1] == 'device']
-
 
 # processing devices
     processing = list()
@@ -59,7 +58,9 @@ def main():
     proc = proc.split('\n')
     
     # change multiple consecutive spaces or tab to one space
-    proc = [re.sub('[\s]+', ' ', i)  for i in proc]
+    proc = [re.sub(r'[\s]+', ' ', i)  for i in proc]
+
+    proc = [re.sub(r'^[\s]+', '', i)  for i in proc]
 
     # pick up matching value
     for x in proc:
@@ -86,4 +87,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
