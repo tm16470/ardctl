@@ -9,7 +9,7 @@ def main():
         "-s", "--small-screen", action="store_true", default=False
     )
     args = parser.parse_args()
-    main(args)
+    
     screens = pywinctl.getAllWindowsDict()['scrcpy']['windows']
     
     position = get_position(screens)
