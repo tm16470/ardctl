@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
-import config
 import argparse
 import pywinctl
-
 
 def main():
     parser = argparse.ArgumentParser()
