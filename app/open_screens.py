@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
-import config
 import argparse
 import sys
 import subprocess
 import re
 
-from pprint import pprint as p
+window_size = [
+        { "width": 150, "height": 335 },
+        { "width": 200, "height": 445 },
+]
 
 def main(args):
     if args.small_screen == True:
@@ -19,8 +21,8 @@ def main(args):
     else:
         n = 0
 
-    window_width = config.window_size[n]["width"]
-    window_height = config.window_size[n]["height"]
+    window_width = window_size[n]["width"]
+    window_height = window_size[n]["height"]
     
 
 # connected devices
