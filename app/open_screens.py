@@ -10,7 +10,13 @@ window_size = [
         { "width": 200, "height": 445 },
 ]
 
-def main(args):
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--small-screen", action="store_true", default=False)
+    parser.add_argument("-l", "--large-screen", action="store_true", default=False)
+    args = parser.parse_args()
+
+
     if args.small_screen == True:
         n = 0
     else:
@@ -79,8 +85,5 @@ def main(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-s", "--small-screen", action="store_true", default=False)
-    parser.add_argument("-l", "--large-screen", action="store_true", default=False)
-    args = parser.parse_args()
+    main()
 
