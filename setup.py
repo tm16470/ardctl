@@ -12,6 +12,7 @@ setup(
         "console_scripts": [
             "remove-default-apps=app.remove_default_apps:main",
             "open-screens=app.open_screens:main",
+            "align-screens=app.align_screens:main",
             "swipe-screens=app.swipe_screens:main",
         ],
     },
