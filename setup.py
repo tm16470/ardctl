@@ -6,7 +6,11 @@ setup(
     description="A CLI tool to manage Android screens and apps",
     packages=find_packages(),
     install_requires=[
-        "fire"
+        "fire",
+        "pywinctl",
+        "pyautogui",
+        "logzero",
+        "tqdm"
     ],
     entry_points={
         "console_scripts": [
