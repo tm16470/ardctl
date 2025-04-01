@@ -7,10 +7,11 @@ import sys
 from logzero import logger
 from tqdm import tqdm
 import math
+import platform
 
 second_per_unit = 0.25
 total_wait_second = 14
-
+os_type = platform.system().lower()
 pyautogui.FAILSAFE = False
 
 def main():
@@ -49,17 +50,24 @@ def get_coordinate(loop):
 
     x, y, z = 0, 0, 0
     for i in range(loop):
+        if os_type == "linux":
+            window_width = window_size.width
+            window_height = window_size.height
+        elif os_type == "darwin":
+            window_width = window_size[0]
+            window_height = window_size[1]
+
         if i == 0:
-            x = int(window_size.width / 2)
-            y = int(window_size.height / 2 ) + 37
+            x = int(window_width / 2)
+            y = int(window_height / 2 ) + 37
         else:
             if i % 2 == 0:
-                x = x + window_size.width
-                y = int(window_size.height / 2 ) + 37
+                x = x + window_width
+                y = int(window_height / 2 ) + 37
                 z = 0
             else:
-                y = 37 + window_size.height + 37 + int(window_size.height / 2)
-                z = 37 + window_size.height
+                y = 37 + window_height + 37 + int(window_height / 2)
+                z = 37 + window_height
 
         coordinate.append([x, y, z])
 
