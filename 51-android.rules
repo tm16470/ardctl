@@ -1,0 +1,20 @@
+#	ZTE
+#		Blade (1353=normal,1351=debug)
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", ENV{adb_user}="yes"
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353", ENV{adb_user}="yes"
+#		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", ENV{adb_user}="yes"
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355", ENV{adb_user}="yes"
+
+#	ZUK
+SUBSYSTEM=="usb", ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
+
+# Enable device as a user device if found
+ENV{adb_user}=="yes", MODE="0660", GROUP="plugdev", TAG+="uaccess"
+
+# ZTE A302ZT
+SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="0452", MODE="0666", GROUP="plugdev"
+# Fujitsu A101FC
+SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="10f9", MODE="0666", GROUP="plugdev"
+# Fujitsu FCG02
+SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1165", MODE="0666", GROUP="plugdev"
