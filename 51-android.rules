@@ -29,3 +29,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", 
 
 # Google Inc. Nexus/Pixel Device (MIDI)
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee8", MODE="0666", GROUP="plugdev"
+
+# Google Inc. Pixel 6a
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", MODE="0666", GROUP="plugdev"
+
