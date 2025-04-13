@@ -16,5 +16,9 @@ ENV{adb_user}=="yes", MODE="0660", GROUP="plugdev", TAG+="uaccess"
 SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="0452", MODE="0666", GROUP="plugdev"
 # Fujitsu A101FC
 SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="10f9", MODE="0666", GROUP="plugdev"
-# Fujitsu FCG02
+# Fujitsu Connected Technologies Limited FCG02
 SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1165", MODE="0666", GROUP="plugdev"
+# Sony Ericsson Mobile Communications AB SO-53C
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="320e", MODE="0666", GROUP="plugdev"
+# Blackview WAVE 6C
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee8", MODE="0666", GROUP="plugdev"
