@@ -6,8 +6,8 @@ import subprocess
 import re
 
 window_size = [
-        { "width": 125, "height": 285 },
-        { "width": 200, "height": 445 },
+        { "width": 150, "height": 335 },
+        { "width": 220, "height": 485 },
 ]
 
 def main():
@@ -77,6 +77,8 @@ def main():
                 f'scrcpy -s {i[0]} '
                 '--stay-awake '
                 '--no-audio '
+                '--video-bit-rate 128K '
+                '--max-fps 15 '
                 f'--window-title={i[4][6:]}_{i[0][-4:]} '
                 f'--window-width {window_width} '
                 f'--window-height {window_height} '
