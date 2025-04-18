@@ -33,3 +33,5 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee8", MODE="0666", 
 # Google Inc. Pixel 6a
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", MODE="0666", GROUP="plugdev"
 
+# OPPO Electronics Corp. A402OP
+SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", ATTR{idProduct}=="2769", MODE="0666", GROUP="plugdev"
