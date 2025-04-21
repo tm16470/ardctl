@@ -6,7 +6,7 @@ import subprocess
 import re
 
 window_size = [
-        { "width": 150, "height": 335 },
+        { "width": 140, "height": 310 },
         { "width": 220, "height": 485 },
 ]
 
