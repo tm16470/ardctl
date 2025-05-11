@@ -9,8 +9,8 @@ from tqdm import tqdm
 import math
 import platform
 
-second_per_unit = 0.25
-total_wait_second = 14
+second_per_unit = 0.1
+total_wait_second = 10
 os_type = platform.system().lower()
 pyautogui.FAILSAFE = False
 
