@@ -1,37 +1,19 @@
-#	ZTE
-#		Blade (1353=normal,1351=debug)
-SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1351", ENV{adb_user}="yes"
-SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353", ENV{adb_user}="yes"
-#		Blade S (Crescent, Orange San Francisco 2) (1355=normal,1354=debug)
-SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1354", ENV{adb_user}="yes"
-SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1355", ENV{adb_user}="yes"
-
-#	ZUK
-SUBSYSTEM=="usb", ATTR{idVendor}=="2b4c", ENV{adb_user}="yes"
-
 # Enable device as a user device if found
 ENV{adb_user}=="yes", MODE="0660", GROUP="plugdev", TAG+="uaccess"
 
-# Fujitsu A101FC
-SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="10f9", MODE="0666", GROUP="plugdev"
-
-# Fujitsu Connected Technologies Limited FCG02
-SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1165", MODE="0666", GROUP="plugdev"
-
-# Sony Ericsson Mobile Communications AB SO-53C
+# ID 0fce:320e Sony Ericsson Mobile Communications AB SO-53C
+# ID 0fce:320e Sony Ericsson Mobile Communications AB A203SO
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="320e", MODE="0666", GROUP="plugdev"
 
-# ZTE WCDMA Technologies MSM A302ZT
-SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="0452", MODE="0666", GROUP="plugdev"
-
-# Google Inc. Nexus/Pixel Device (charging + debug)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee7", MODE="0666", GROUP="plugdev"
-
-# Google Inc. Nexus/Pixel Device (MIDI)
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee8", MODE="0666", GROUP="plugdev"
-
-# Google Inc. Pixel 6a
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee1", MODE="0666", GROUP="plugdev"
-
-# OPPO Electronics Corp. A402OP
+# ID 22d9:2769 OPPO Electronics Corp. A402OP
 SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", ATTR{idProduct}=="2769", MODE="0666", GROUP="plugdev"
+
+# ID 30ee:1159 Fujitsu Connected Technologies Limited F-52E
+SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1159", MODE="0666", GROUP="plugdev"
+
+# ID 30ee:1165 Fujitsu Connected Technologies Limited FCG02
+SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1165", MODE="0666", GROUP="plugdev"
+
+# ID 30ee:1171 Fujitsu Connected Technologies Limited A402FC
+SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1171", MODE="0666", GROUP="plugdev"
+
