@@ -5,7 +5,7 @@ ENV{adb_user}=="yes", MODE="0660", GROUP="plugdev", TAG+="uaccess"
 # ID 0fce:320e Sony Ericsson Mobile Communications AB A203SO
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="320e", MODE="0666", GROUP="plugdev"
 
-# 18d1:4ee8 Google Inc. Nexus/Pixel Device (MIDI)
+# [Blackview] Blackview WAVE 6C (Android 13)
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee8", MODE="0666", GROUP="plugdev"
 
 # [OPPO] OPPO A402OP (Android 15)
