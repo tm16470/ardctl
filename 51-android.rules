@@ -2,7 +2,7 @@
 ENV{adb_user}=="yes", MODE="0660", GROUP="plugdev", TAG+="uaccess"
 
 # [Sony] docomo SO-53C (Android 14)
-# ID 0fce:320e Sony Ericsson Mobile Communications AB A203SO
+# [Sony] KDDI SOG08 (Android 14)
 SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", ATTR{idProduct}=="320e", MODE="0666", GROUP="plugdev"
 
 # [Blackview] Blackview WAVE 6C (Android 13)
