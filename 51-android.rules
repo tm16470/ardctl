@@ -11,7 +11,7 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", ATTR{idProduct}=="2769", MODE="0666", 
 # ID 30ee:1159 Fujitsu Connected Technologies Limited F-52E
 SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1159", MODE="0666", GROUP="plugdev"
 
-# ID 30ee:1165 Fujitsu Connected Technologies Limited FCG02
+# [FCNT] FCNT FCG02 (Android 14)
 SUBSYSTEM=="usb", ATTR{idVendor}=="30ee", ATTR{idProduct}=="1165", MODE="0666", GROUP="plugdev"
 
 # ID 30ee:1171 Fujitsu Connected Technologies Limited A402FC
