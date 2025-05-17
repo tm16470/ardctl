@@ -14,7 +14,7 @@ window_size = [
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--small-screen", action="store_true", default=False)
-    parser.add_argument("-l", "--mid-screen", action="store_true", default=False)
+    parser.add_argument("-m", "--mid-screen", action="store_true", default=False)
     parser.add_argument("-l", "--large-screen", action="store_true", default=False)
     args = parser.parse_args()
 
