@@ -6,14 +6,7 @@ import re
 	
 def main():
 
-    if not len(sys.argv) > 1:
-        subprocess.run('adb devices', shell=True)
-        print('Argument is required. exit.')
-        sys.exit(1)
-
-    sn = sys.argv[1]
-
-    cmd = f'adb -s {sn} shell pm list package'
+    cmd = f'adb shell pm list package'
     output = subprocess.run(cmd, shell=True, capture_output=True)
 
     keywords = [
