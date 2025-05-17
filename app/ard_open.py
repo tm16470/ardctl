@@ -18,21 +18,12 @@ def main():
     parser.add_argument("-l", "--large-screen", action="store_true", default=False)
     args = parser.parse_args()
 
-
+    n = 1
     if args.small_screen == True:
         n = 0
-    else:
-        n = 1
-
-    if args.mid_screen == True:
-        n = 1
-    else:
-        n = 1
 
     if args.large_screen == True:
         n = 2
-    else:
-        n = 1
 
     window_width = window_size[n]["width"]
     window_height = window_size[n]["height"]
