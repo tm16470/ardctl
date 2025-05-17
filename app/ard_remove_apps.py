@@ -97,6 +97,10 @@ def main():
 	"motorola.fmplayer", "motorola.ccc.notification",
 	"motorola.audiorecorder",
 
+    # A203SO
+	"com.booking", "jp.co.sony.swish", "com.sony.songpal.mdr",
+
+
 
     ]
 
