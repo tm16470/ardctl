@@ -15,9 +15,9 @@ setup(
     entry_points={
         "console_scripts": [
             "remove-default-apps=app.remove_default_apps:main",
-            "open-screens=app.open_screens:main",
-            "align-screens=app.align_screens:main",
-            "swipe-screens=app.swipe_screens:main",
+            "ard-open=app.ard-screens:main",
+            "ard-align=app.ard-align:main",
+            "ard-swipe=app.ard-swipe:main",
         ],
     },
     python_requires=">=3.6",
