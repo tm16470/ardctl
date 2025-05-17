@@ -14,10 +14,10 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "ard-remove-apps=app.ard-remove-apps:main",
-            "ard-open=app.ard-open:main",
-            "ard-align=app.ard-align:main",
-            "ard-swipe=app.ard-swipe:main",
+            "ard-remove-apps=app.ard_remove_apps:main",
+            "ard-open=app.ard_open:main",
+            "ard-align=app.ard_align:main",
+            "ard-swipe=app.ard_swipe:main",
         ],
     },
     python_requires=">=3.6",
