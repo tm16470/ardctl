@@ -104,12 +104,22 @@ def main():
     for i in output.stdout.decode('utf-8').split('\n'):
         if pattern.search(i):
             cmd = (
-                f'adb -s {sn} '
-                'shell pm uninstall -k --user 0 '
+                f'adb shell pm uninstall -k --user 0 '
                 f'{i[8:]}'
             )
             subprocess.run(cmd, shell=True)
 
+    cmd = 'adb shell settings put global stay_on_while_plugged_in 7'
+    subprocess.run(cmd, shell=True)
+
+    cmd = 'adb shell settings put global animator_duration_scale 0.0'
+    subprocess.run(cmd, shell=True)
+	
+    cmd = 'adb shell settings put global transition_animation_scale 0.0'
+    subprocess.run(cmd, shell=True)
+
+    cmd = 'adb shell settings put global window_animation_scale 0.0'
+    subprocess.run(cmd, shell=True)
 
 if __name__ == "__main__":
     main()
