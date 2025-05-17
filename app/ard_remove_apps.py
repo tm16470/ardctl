@@ -73,7 +73,7 @@ def main():
 	"us.mitene", "fcnt.mobile_phone.onlinemanual",
 	"fujitsu.mobile_phone.exlidertutorial", 
 	"fujitsu.mobile_phone.exliderservice",
-	"ss.android.ugc.trill",
+	"ss.android.ugc.trill", "com.fcnt.mobile_phone.batterymonitor",
 	
 
     # Sharp A103SH
