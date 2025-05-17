@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="android-ctrl",
+    name="ardctl",
     version="0.1.0",
     description="A CLI tool to manage Android screens and apps",
     packages=find_packages(),
