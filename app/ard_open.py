@@ -8,11 +8,13 @@ import re
 window_size = [
         { "width": 140, "height": 310 },
         { "width": 220, "height": 485 },
+        { "width": 300, "height": 660 },
 ]
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", "--small-screen", action="store_true", default=False)
+    parser.add_argument("-l", "--mid-screen", action="store_true", default=False)
     parser.add_argument("-l", "--large-screen", action="store_true", default=False)
     args = parser.parse_args()
 
@@ -20,12 +22,17 @@ def main():
     if args.small_screen == True:
         n = 0
     else:
-        n = 0
+        n = 1
 
-    if args.large_screen == True:
+    if args.mid_screen == True:
         n = 1
     else:
-        n = 0
+        n = 1
+
+    if args.large_screen == True:
+        n = 2
+    else:
+        n = 1
 
     window_width = window_size[n]["width"]
     window_height = window_size[n]["height"]
