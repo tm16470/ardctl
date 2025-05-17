@@ -14,7 +14,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "remove-default-apps=app.remove_default_apps:main",
+            "ard-remove-apps=app.ard-remove-apps:main",
             "ard-open=app.ard-open:main",
             "ard-align=app.ard-align:main",
             "ard-swipe=app.ard-swipe:main",
