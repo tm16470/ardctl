@@ -100,6 +100,8 @@ def main():
     # A203SO
 	"com.booking", "jp.co.sony.swish", "com.sony.songpal.mdr",
 
+    # A402FC
+        "com.example.helpo_preinstall2022",
 
 
     ]
