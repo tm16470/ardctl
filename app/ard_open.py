@@ -6,9 +6,9 @@ import subprocess
 import re
 
 window_size = [
-        { "width": 140, "height": 310 },
-        { "width": 220, "height": 485 },
-        { "width": 300, "height": 660 },
+        { "width": 120, "height": 264 },
+        { "width": 200, "height": 440 },
+        { "width": 280, "height": 616 },
 ]
 
 def main():
