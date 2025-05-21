@@ -10,7 +10,8 @@ setup(
         "pywinctl",
         "pyautogui",
         "logzero",
-        "tqdm"
+        "tqdm",
+        "fire"
     ],
     entry_points={
         "console_scripts": [
@@ -20,6 +21,7 @@ setup(
             "ard-swipe=app.ard_swipe:main",
             "ard-devices=app.ard_devices:main",
             "ard-uhub=app.ard_uhub:main",
+            "ardctl=app.cli:ArdCtl",
         ],
     },
     python_requires=">=3.6",
