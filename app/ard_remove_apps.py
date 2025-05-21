@@ -106,14 +106,14 @@ def main():
 
     ]
 
-    pattern = re.compile( "|".join(keywords), re.IGNORECASE)
-    for i in output.stdout.decode('utf-8').split('\n'):
-        if pattern.search(i):
-            cmd = (
-                f'adb shell pm uninstall -k --user 0 '
-                f'{i[8:]}'
-            )
-            subprocess.run(cmd, shell=True)
+    # pattern = re.compile( "|".join(keywords), re.IGNORECASE)
+    # for i in output.stdout.decode('utf-8').split('\n'):
+    #     if pattern.search(i):
+    #         cmd = (
+    #             f'adb shell pm uninstall -k --user 0 '
+    #             f'{i[8:]}'
+    #         )
+    #         subprocess.run(cmd, shell=True)
 
     cmd = 'adb shell settings put global stay_on_while_plugged_in 7'
     subprocess.run(cmd, shell=True)
