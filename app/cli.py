@@ -4,6 +4,10 @@ class ArdCtl:
     def open(self):
         subprocess.run(["scrcpy"])
 
-if __name__ == "__main__":
+def main():
     import fire
     fire.Fire(ArdCtl())
+
+if __name__ == "__main__":
+    main()
+
