@@ -21,7 +21,7 @@ setup(
             "ard-swipe=app.ard_swipe:main",
             "ard-devices=app.ard_devices:main",
             "ard-uhub=app.ard_uhub:main",
-            "ardctl=app.cli:ArdCtl",
+            "ardctl=app.cli:main",
         ],
     },
     python_requires=">=3.6",
