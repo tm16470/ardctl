@@ -18,6 +18,8 @@ setup(
             "ard-open=app.ard_open:main",
             "ard-align=app.ard_align:main",
             "ard-swipe=app.ard_swipe:main",
+            "ard-devices=app.ard_devices:main",
+            "ard-uhub=app.ard_uhub:main",
         ],
     },
     python_requires=">=3.6",
