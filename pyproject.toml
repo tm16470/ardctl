@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ardctl"
+version = "0.1.0"
+description = "ADB & scrcpy automation toolkit"
+authors = [
+  {name = "Your Name", email = "your@email.com"}
+]
+dependencies = [
+  "pywinctl",
+  "pyautogui",
+  "logzero",
+  "tqdm"
+]
+
+[project.scripts]
+ardctl = "ardctl.__main__:main"
