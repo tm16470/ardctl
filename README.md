@@ -28,7 +28,7 @@ ardctl recover
 ## Setup
 
 ```bash
-git clone https://github.com/yourname/ardctl.git
+git clone https://github.com/tm16470/ardctl.git
 cd ardctl
 pip install .
 ```
