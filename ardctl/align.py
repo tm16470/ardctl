@@ -1,18 +1,22 @@
 import pywinctl
+from logzero import logger
 
 def run(args=None):
     screens = pywinctl.getAllWindowsDict().get('scrcpy', {}).get('windows', {})
     if not screens:
-        print("No scrcpy windows found.")
+        logger.warning("No scrcpy windows found.")
         return
 
     position = get_position(screens)
     titles = list(screens.keys())
 
     for i, title in enumerate(titles):
+        logger.info(f"Aligning: '{title}' → X:{position[i][0]} Y:{position[i][1]}")
         wins = pywinctl.getWindowsWithTitle(title)
         if wins:
             wins[0].moveTo(position[i][0], position[i][1])
+        else:
+            logger.warning(f"Window '{title}' not found.")
 
 def get_position(screens):
     position = []
