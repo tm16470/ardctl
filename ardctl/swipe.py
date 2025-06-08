@@ -1,13 +1,14 @@
+cat ardctl/swipe.py
 import pywinctl
 import pyautogui
 import time
 import platform
 import math
+import random
 from logzero import logger
 from tqdm import tqdm
 
 second_per_unit = 0.1
-total_wait_second = 10
 os_type = platform.system().lower()
 pyautogui.FAILSAFE = False
 
@@ -18,29 +19,32 @@ def run(args=None):
 
     while True:
         for n in range(loop):
-            logger.info(f"count {count}: {n + 1}: swiping...")
-            pyautogui.moveTo(coordinate[n][0], coordinate[n][1])
+            x = coordinate[n][0]
+            y_start = coordinate[n][1]
+            y_end = coordinate[n][2]
+            logger.info(f"count {count}: {n + 1}: swiping from ({x}, {y_start}) to ({x}, {y_end})")
+            pyautogui.moveTo(x, y_start)
             pyautogui.mouseDown()
-            pyautogui.moveTo(coordinate[n][0], coordinate[n][2])
+            pyautogui.moveTo(x, y_end)
             pyautogui.mouseUp()
             time.sleep(second_per_unit)
 
-        wait_second = max(0, math.ceil(total_wait_second - (second_per_unit * loop)))
-        for _ in tqdm(range(wait_second)):
-            time.sleep(1)
+        wait_second = round(random.uniform(10.0, 12.0), 1)
+        logger.info(f"Waiting {wait_second} seconds before next swipe set...")
+        for _ in tqdm(range(int(wait_second * 10))):
+            time.sleep(0.1)
 
         count += 1
 
 def get_coordinate(loop):
-    coordinate = []
-    scrcpy_windows = pywinctl.getAllWindowsDict().get('scrcpy', {}).get('windows', {})
+    coordinate = list()
 
-    for win in scrcpy_windows.values():
-        window_size = win["size"]
+    screens = pywinctl.getAllWindowsDict()['scrcpy']['windows']
+    for i in screens:
+        window_size = screens[i]["size"]
         break
-    else:
-        raise RuntimeError("No scrcpy window found")
 
+    x, y, z = 0, 0, 0
     for i in range(loop):
         if os_type == "linux":
             window_width = window_size.width
@@ -51,13 +55,12 @@ def get_coordinate(loop):
 
         if i == 0:
             x = int(window_width / 2)
-            y = int(window_height / 2) + 37
-            z = int(window_height) - 50
+            y = int(window_height / 2 ) + 37
         else:
             if i % 2 == 0:
-                x += window_width
-                y = int(window_height / 2) + 37
-                z = int(window_height) - 50
+                x = x + window_width
+                y = int(window_height / 2 ) + 37
+                z = 0
             else:
                 y = 37 + window_height + 37 + int(window_height / 2)
                 z = 37 + window_height
