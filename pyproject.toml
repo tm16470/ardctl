@@ -17,4 +17,4 @@ dependencies = [
 ]
 
 [project.scripts]
-ardctl = "ardctl.__main__:main"
+ardctl = "app.__main__:main"
