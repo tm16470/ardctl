@@ -1,7 +1,7 @@
-from ardctl import open as ardctl_open
-from ardctl import swipe as ardctl_swipe
-from ardctl import align as ardctl_align
-from ardctl import recover as ardctl_recover
+from app import open as ardctl_open
+from app import swipe as ardctl_swipe
+from app import align as ardctl_align
+from app import recover as ardctl_recover
 
 def main():
     import argparse
