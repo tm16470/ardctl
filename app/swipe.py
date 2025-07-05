@@ -4,8 +4,6 @@ import time
 import platform
 import math
 import random
-import subprocess
-import re
 from logzero import logger
 from tqdm import tqdm
 
@@ -38,39 +36,24 @@ def run(args=None):
 
 def get_coordinates(limit):
     coordinate = []
-    connected = subprocess.check_output('adb devices -l', shell=True, text=True).split('\n')
-    connected = [re.sub(r'[\s]+', ' ', line).strip() for line in connected if line.strip()]
-    connected = [line.split(' ') for line in connected if 'device' in line]
-    connected = [line for line in connected if line[1] == 'device']
-
-    titles = []
-    for device in connected:
-        serial = device[0]
-        model = next((part[6:] for part in device if part.startswith("model:")), serial[-4:])
-        title = f"{model}_{serial[-4:]}"
-        titles.append(title)
-
-    if not titles:
-        logger.error("No connected devices found via adb.")
-        exit(1)
+    windows = [w for w in pywinctl.getAllWindows() if '_' in w.title and len(w.title) >= 5]
 
     count = 0
-    for title in titles:
+    for win in windows:
         if limit and count >= limit:
             break
         try:
-            win = pywinctl.getWindowsWithTitle(title)[0]
             box = win.getClientFrame()
             x = box.left + (box.right - box.left) // 2
             y_start = box.top + (box.bottom - box.top) // 2
-            y_end = y_start + 100  # swipe downward
+            y_end = box.top  # swipe to the top of the window
             coordinate.append([x, y_start, y_end])
             count += 1
         except Exception as e:
-            logger.warning(f"Could not find scrcpy window '{title}': {e}")
+            logger.warning(f"Could not get window geometry for '{win.title}': {e}")
 
     if not coordinate:
-        logger.error("No scrcpy windows matched expected titles.")
+        logger.error("No usable scrcpy windows found.")
         exit(1)
 
     return coordinate
