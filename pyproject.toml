@@ -13,7 +13,8 @@ dependencies = [
   "pywinctl",
   "pyautogui",
   "logzero",
-  "tqdm"
+  "tqdm",
+  "psutil"
 ]
 
 [project.scripts]
